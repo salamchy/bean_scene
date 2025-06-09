@@ -7,7 +7,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: ["https://bean-scene-five.vercel.app"],
+    origin: ["http://localhost:5173"],
     credentials: true,
   })
 );
@@ -25,9 +25,11 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 //router import
-// import userRouter from "./routes/user.routes.js";
+import userRouter from "./routes/user.route.js";
+import contactRouter from "./routes/contact.route.js";
 
 //router declaration
-// app.use("/api/v1", userRouter);
+app.use("/api/v1/user", userRouter);
+app.use("/api/v1/contact", contactRouter);
 
 export { app };

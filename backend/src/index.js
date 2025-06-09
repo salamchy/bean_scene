@@ -1,9 +1,9 @@
 import dotenv from "dotenv";
-import connectDB from "./database/index.js";
+import connectDB from "../db/index.js";
 import { app } from "../src/app.js";
 
 // Load environment variables from .env file
-dotenv.config();
+dotenv.config({ path: process.cwd() + "/.env" });
 
 connectDB()
   .then(() => {
