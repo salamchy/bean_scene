@@ -1,27 +1,18 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Login from './components/Login';
-import Register from './components/Register';
-import Home from './pages/Home';
+import Login from "./components/Login";
+import Register from "./components/Register";
+import Home from "./pages/Home";
+import AboutUs from "./pages/AboutUs";
+import Contact from "./pages/Contact";
+import Menu from "./pages/Menu";
+import AdminDashboard from "./admin/pages/Dashboard";
+import ProtectedRoute from "./admin/components/protectedRoute";
 
 const App = () => {
- const router = createBrowserRouter([
+  const router = createBrowserRouter([
     {
-      path: '/',
-      element: <Home />,
-      // children: [
-      //   {
-      //     index: true,
-      //     element: <Home />,
-      //   },
-        // {
-        //   path: '/cart',
-        //   element: (
-        //     <ProtectedRoute>
-        //       <CartItems />
-        //     </ProtectedRoute>
-        //   )
-        // }
-      // ]
+      path: "/",
+      element: <Home />
     },
     // {
     //   path: '/admin',
@@ -31,12 +22,16 @@ const App = () => {
     //       path: "/admin/carousels",
     //       element: <CarouselAdmin />,
     //     },
-    //     {
-    //       path: "/admin/upload-carousel",
-    //       element: <CarouselUpload />,
-    //     },
     //   ]
     // },
+    {
+      path: "/dashboard",
+      element: (
+        <ProtectedRoute adminOnly={true}>
+          <AdminDashboard />
+        </ProtectedRoute>
+      ),
+    },
     {
       path: "/login",
       element: <Login />,
@@ -45,9 +40,21 @@ const App = () => {
       path: "/register",
       element: <Register />,
     },
+    {
+      path: "/about",
+      element: <AboutUs />,
+    },
+    {
+      path: "/contact",
+      element: <Contact />,
+    },
+    {
+      path: "/menu",
+      element: <Menu />,
+    },
   ]);
 
   return <RouterProvider router={router} />;
-}
+};
 
-export default App
+export default App;

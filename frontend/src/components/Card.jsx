@@ -1,4 +1,3 @@
-import Button from "./Button";
 
 const Card = ({ image, title, description, price }) => {
   return (
