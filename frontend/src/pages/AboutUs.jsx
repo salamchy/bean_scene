@@ -1,9 +1,11 @@
 import coffeeImg from '../assets/coffees.jpg'; 
+import Navbar from '../components/Navbar';
 
 const AboutUs = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#d2b48c] to-[#6f4e37] text-white py-12 px-4 md:px-16">
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+    <div className="min-h-screen bg-gradient-to-br from-[#d2b48c] to-[#6f4e37] text-white pb-12 px-4 md:px-16">
+      <Navbar />
+      <div className="max-w-6xl py-6 mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
         {/* Text Section */}
         <div>
           <h1 className="text-4xl md:text-5xl font-bold mb-6 font-primary">About Bean Scene</h1>
