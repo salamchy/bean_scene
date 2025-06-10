@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useCreateMessageMutation } from '../redux/services/contactApi';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Navbar from '../components/Navbar';
 
 const Contact = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
@@ -24,7 +25,8 @@ const Contact = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#d2b48c] to-[#6f4e37] text-white py-16 px-6 md:px-20">
+    <div className="min-h-screen bg-gradient-to-br from-[#d2b48c] to-[#6f4e37] text-white pb-12 px-6 md:px-20">
+      <Navbar />
       <div className="max-w-2xl mx-auto">
         <h2 className="text-4xl font-bold text-center mb-8 font-primary">Contact Us</h2>
         <form
